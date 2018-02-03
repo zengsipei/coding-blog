@@ -6,21 +6,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
-    
+
     <meta name="keywords" content="{{ site.tags }}">
     <meta name="author" content="{{{ site.author }}}">
 
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="bookmark" href="/favicon.ico" />
 
-    <link rel="stylesheet" href="/assets/css/normalize.css">  
+    <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
 <body>
   <div id="container">
     {{> header }}
-    <main>
+    <main id="main">
         <div class="contents">
             {{#each (lookup collections collections_key)  }}
                 <div class="item">
@@ -33,10 +33,13 @@
                     </div>
                 </div>
             {{/each}}
-        </div> 
+        </div>
+        {{> footer }}
     </main>
-    {{> footer }}
   </div>
+
+  <script src="/assets/js/site.js"></script>
+
 </body>
 
 </html>

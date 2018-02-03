@@ -83,14 +83,20 @@ function tags() {
     return function(files, metalsmith, done) {
         let f;
         let tagMap = {};
-        for (var file in files) {
+        let m = metalsmith.metadata();
+
+        for (let file in files) {
             f = files[file];
+
             // tags
             if (f.tags) {
+
                 if (typeof(f.tags) === "string") {
                     f.tags = f.tags.split(',');
                 }
+
                 f.tags.forEach(function(tag) {
+
                     if (!tagMap[tag]) {
                         tagMap[tag] = [];
                     }
@@ -99,7 +105,25 @@ function tags() {
                 }, this);
             }
         }
-        let m = metalsmith.metadata();
+
+        // 定义比较器
+        function compare(propertyName) {
+
+            return function (object1, object2) {
+                let value1 = object1[propertyName];
+                let value2 = object2[propertyName];
+
+                return value1 - value2;
+            }
+        }
+
+        // 按 sort 排序
+        for (let tag in tagMap) {
+            let tagV = tagMap[tag];
+
+            tagV.sort(compare("sort"));
+        }
+
         m.tagMap = tagMap;
         metalsmith.metadata(m);
         done()
@@ -107,12 +131,11 @@ function tags() {
 }
 
 const config = {
-
-    title: "CodingBlog",
-    description: "一个程序员专用的私房极简静态博客系统",
+    title: "吃点什么记",
+    description: "记录学习（吃）与成果（？）的博客",
     tags: "独立博客，静态博客，Markdown博客",
-    author: "Nshen <nshen121@gmail.com>",
-    url: "http://nshen.net/",
+    author: "Zsp <806852034@qq.com>",
+    url: "https://zengsipei.wang/",
     updated: new Date().toISOString(),
     buildTime: String(moment().format('LLL'))
 }
@@ -128,17 +151,20 @@ metalsmith.metadata({ site: config })
     .use(collections({
         articles: {
             pattern: 'article/*.md',
-            sortBy: 'date',
+            // sortBy: 'date',
+            sortBy: 'sort',
             reverse: true
         },
         projects: {
             pattern: 'project/*.md',
-            sortBy: 'date',
+            // sortBy: 'date',
+            sortBy: 'sort',
             reverse: true
         },
         all: {
             pattern: '*/*.md',
-            sortBy: 'date',
+            // sortBy: 'date',
+            sortBy: 'sort',
             reverse: true
         }
     }))

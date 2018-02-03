@@ -1,9 +1,3 @@
-# CodingBlog 程序员的私房极简博客系统
-
-基于metalsmith的极简博客[（简介和演示在此）](http://nshen.net/project/2017-09-04/new-blog/)
-
-## 安装方法
-
-todo。。
-
-[着急用直接来问我](http://nshen.net/about/)
+# coding-blog
+## 基于 <a href="https://github.com/nshen/coding-blog" taget="_blank">nshen/coding-blog
+</a>

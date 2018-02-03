@@ -2,15 +2,13 @@
 title: 关于
 layout: blank.hbs
 ---
-# 关于我
 
-我是一个粉刷匠，粉刷本领强~
+老家四川内江，2016 年毕业，参加工作近两年才真正学的编程，主要微信网页（PHP 方面）小功能的开发，旧产品的维护，以及一部分新需求的添加、修改，大多数使用 ThinkPHP 3.2，目前在学习使用 Laravel 5.5。不过最后一段时间都在用 Vue 帮前端写逻辑，后台采用 RESTFul 设计成 API，还有负责开发微信小程序，目前失业......
 
 ## 联系我：
 
-* QQ:5836211
-* 邮箱：nshen121(at)gmail(dot)com
+* 邮箱：806852304@qq.com
 
 ## 关于本站
 
-<p>本站由 <a href="https://github.com/nshen/coding-blog" target="blank">CodingBlog</a> 强力构建
+个人静态博客，首次学习搭建，准备用于整理所学，记录所遇。
