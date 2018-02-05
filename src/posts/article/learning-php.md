@@ -20,4 +20,12 @@ sort: 22
 
 验证 <a href="http://www.jb51.net/article/40306.htm" href="_blank">深入解析PHP中逗号与点号的区别</a>
 
+#### 2、PDO 的 bindParam 与 bindValue 的区别
+
+研究之后，发现，真·字面意思，前者将参数绑给占位符，后者是将值绑给占位符。（参数是可变的，而值是固定给的，这里为了区分变量 つ﹏⊂）
+
+验证 <a href="https://segmentfault.com/a/1190000002968592" target="_blank">PDO 的 bindParam 与 bindValue 的区别</a> 。
+
+PHP 手册其实也有说明，差别应该就是传值引用的问题。
+
 #### 待更新。。。
